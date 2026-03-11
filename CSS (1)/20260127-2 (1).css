@@ -1,0 +1,1535 @@
+/* 字型Google font */
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+
+body {
+    /* font-family: "Noto Sans TC", sans-serif; */
+
+    /* font-family: "Dela Gothic One", sans-serif; */
+
+    font-family: "Zen Maru Gothic", sans-serif;
+
+}
+
+
+
+:root {
+    --color-1c: #E4DACE;
+    --color-2c: #E5BB4B;
+    --color-3c: #D88E2F;
+    --color-4c: #498EAF;
+    --color-5c: #631F16;
+    --color-6c: #5EBB4B;
+    /* 暖調混色系 ⭐推薦 */
+    --blend-sunset: #DC9C3D;
+    /* #D88E2F + #E5BB4B 混合 */
+    --blend-terracotta: #A6563A;
+    /* #D88E2F + #631F16 混合 */
+    --blend-sage: #6FA757;
+    /* #5EBB4B + #498EAF 混合 */
+    --blend-sand: #E7C482;
+    /* #E4DACE + #E5BB4B 混合 */
+    --blend-clay: #937053;
+    /* #631F16 + #E4DACE 混合 */
+    --blend-teal: #579F7D;
+    /* #498EAF + #5EBB4B 混合 */
+    /* 深淺混調 */
+    --mixed-bronze: #8E5823;
+    /* #D88E2F + #631F16 混合 */
+    --mixed-olive: #6EA44D;
+    /* #5EBB4B + #631F16 混合 */
+    --mixed-slate: #5E8398;
+    /* #498EAF + #631F16 混合 */
+    --mixed-gold: #DFB456;
+    /* #E5BB4B + #D88E2F 混合 */
+    --mixed-mint: #74BB56;
+    /* #5EBB4B + #E5BB4B 混合 */
+    --mixed-ocean: #63A27D;
+    /* #498EAF + #5EBB4B 混合 */
+    /* 三色混調 */
+    --triple-autumn: #B28E40;
+    /* #D88E2F + #E5BB4B + #631F16 */
+    --triple-forest: #628E6D;
+    /* #5EBB4B + #498EAF + #631F16 */
+    --triple-sunset: #CD9C52;
+    /* #D88E2F + #E5BB4B + #E4DACE */
+    --triple-earth: #8B7152;
+    /* #631F16 + #D88E2F + #E4DACE */
+    --triple-meadow: #81A66F;
+    /* #5EBB4B + #E4DACE + #498EAF */
+    --triple-dusk: #7A7B6E;
+    /* #498EAF + #631F16 + #E4DACE */
+    /* 柔和混色 */
+    --soft-apricot: #E3AE6D;
+    /* #E5BB4B + #E4DACE + #D88E2F */
+    --soft-moss: #85B076;
+    /* #5EBB4B + #E4DACE 混合 */
+    --soft-storm: #7EA0A4;
+    /* #498EAF + #E4DACE 混合 */
+    --soft-cocoa: #946B5A;
+    /* #631F16 + #D88E2F + #E4DACE */
+    --soft-honey: #E8C179;
+    /* #E5BB4B + #E4DACE 混合 */
+    --soft-pine: #74A77D;
+    /* #5EBB4B + #498EAF + #E4DACE */
+    /* 對比混調 */
+    --contrast-rust: #AA6E32;
+    /* #D88E2F + #631F16 深度混合 */
+    --contrast-seafoam: #6DAA87;
+    /* #5EBB4B + #498EAF 均勻混合 */
+    --contrast-amber: #D5A045;
+    /* #E5BB4B + #D88E2F 混合 */
+    --contrast-taupe: #AE9380;
+    /* #631F16 + #E4DACE + #D88E2F */
+    --contrast-jade: #5CA96F;
+    /* #5EBB4B + #498EAF 偏綠 */
+    --contrast-camel: #C99A64;
+    /* #D88E2F + #E5BB4B + #E4DACE */
+    /* 灰調混色 */
+    --muted-copper: #A57D56;
+    /* #D88E2F + #631F16 + #498EAF */
+    --muted-olive: #7A9569;
+    /* #5EBB4B + #631F16 + #E4DACE */
+    --muted-steel: #748A8F;
+    /* #498EAF + #631F16 + #E4DACE */
+    --muted-brass: #B89C63;
+    /* #E5BB4B + #631F16 + #498EAF */
+    --muted-sage: #8DA27B;
+    /* #5EBB4B + #E4DACE + #631F16 */
+    --muted-denim: #6D8588;
+    /* #498EAF + #631F16 混合 */
+}
+
+/* 文字相關 */
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+.title-1 {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--blend-sand);
+}
+
+.title-2 {
+    font-size: 63px;
+    font-weight: 900;
+    color: var(--contrast-camel);
+    text-shadow:
+        2px 2px var(--color-5c),
+        10px 10px 6px var(--blend-terracotta);
+    letter-spacing: 15px;
+}
+
+.title-3 {
+    font-size: 61px;
+    font-weight: 900;
+    color: var(--blend-teal);
+    text-shadow: 2px 2px 2px var(--blend-sunset),
+        5px 5px 5px var(--blend-sage);
+}
+
+.title-4 {
+    font-size: 66px;
+    font-weight: 900;
+    color: var(--color-1c);
+    text-shadow: 2px 2px 10px var(--color-2c),
+        3px 7px 6px var(--color-4c);
+}
+
+.title-5 {
+    font-size: 31px;
+    font-weight: 900;
+    color: var(--blend-clay);
+}
+
+.title-6 {
+    font-size: 66px;
+    font-weight: 900;
+    color: var(--mixed-mint);
+}
+
+/* moving_l  moving_r  moving_t  moving_b */
+.moving_l {
+    position: relative;
+    overflow: hidden;
+}
+
+.moving_l .moving_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(50deg, rgba(240, 114, 114, 0.6), rgba(243, 227, 3, 0.904));
+    left: -100%;
+    color: aquamarine;
+    display: flex;
+    /* 垂直置中 */
+    align-items: center;
+    /* 水平置中 */
+    justify-content: center;
+
+}
+
+
+.moving_l:hover .moving_box {
+    left: 0;
+    /* 慢慢出現，瞬間離開 */
+    transition: left 1s;
+}
+.moving_l-1 {
+    position: relative;
+    overflow: hidden;
+}
+
+.moving_l-1 .moving_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.08) 0%,
+            transparent 3%,
+            transparent 97%,
+            rgba(255, 255, 255, 0.08) 100%
+        ),
+        radial-gradient(circle at 95% 50%, rgba(255, 105, 180, 0.18), transparent 60%),
+        radial-gradient(circle at 5% 50%, rgba(100, 149, 237, 0.18), transparent 60%),
+        radial-gradient(ellipse at center, rgba(138, 43, 226, 0.05), transparent 70%),
+        linear-gradient(90deg, 
+            rgba(15, 15, 35, 0.3) 0%, 
+            rgba(25, 25, 45, 0.2) 30%,
+            rgba(35, 35, 55, 0.15) 50%,
+            rgba(25, 25, 45, 0.2) 70%,
+            rgba(15, 15, 35, 0.3) 100%
+        );
+    left: -150%;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-shadow: 
+        -2px 0 15px rgba(100, 149, 237, 0.6),
+        2px 0 15px rgba(255, 105, 180, 0.6),
+        0 0 30px rgba(138, 43, 226, 0.4),
+        0 3px 6px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(22px) saturate(160%) brightness(1.05);
+    -webkit-backdrop-filter: blur(22px) saturate(160%) brightness(1.05);
+    border-left: 3px solid rgba(100, 149, 237, 0.4);
+    border-right: 1px solid rgba(255, 105, 180, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        inset 3px 0 16px rgba(100, 149, 237, 0.2),
+        inset -3px 0 16px rgba(255, 105, 180, 0.15),
+        -8px 0 40px rgba(100, 149, 237, 0.2),
+        8px 0 40px rgba(255, 105, 180, 0.15);
+    overflow: hidden;
+}
+
+.moving_l-1 .moving_box::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        rgba(100, 149, 237, 0.15) 0%,
+        transparent 50%,
+        rgba(255, 105, 180, 0.15) 100%
+    );
+    opacity: 0;
+    animation: pulse-horizontal 2s ease-in-out infinite;
+}
+
+@keyframes pulse-horizontal {
+    0%, 100% { opacity: 0; transform: scaleX(0.95); }
+    50% { opacity: 1; transform: scaleX(1); }
+}
+
+.moving_l-1:hover .moving_box {
+    left: 0;
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: 
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.12) 0%,
+            transparent 3%,
+            transparent 97%,
+            rgba(255, 255, 255, 0.12) 100%
+        ),
+        radial-gradient(circle at 95% 50%, rgba(255, 105, 180, 0.28), transparent 55%),
+        radial-gradient(circle at 5% 50%, rgba(100, 149, 237, 0.28), transparent 55%),
+        radial-gradient(ellipse at center, rgba(138, 43, 226, 0.08), transparent 65%),
+        linear-gradient(90deg, 
+            rgba(20, 20, 40, 0.4) 0%, 
+            rgba(30, 30, 50, 0.3) 30%,
+            rgba(40, 40, 60, 0.25) 50%,
+            rgba(30, 30, 50, 0.3) 70%,
+            rgba(20, 20, 40, 0.4) 100%
+        );
+    border-left: 3px solid rgba(100, 149, 237, 0.6);
+    border-right: 1px solid rgba(255, 105, 180, 0.3);
+    box-shadow: 
+        inset 4px 0 20px rgba(100, 149, 237, 0.3),
+        inset -4px 0 20px rgba(255, 105, 180, 0.25),
+        -12px 0 60px rgba(100, 149, 237, 0.3),
+        12px 0 60px rgba(255, 105, 180, 0.25),
+        0 0 100px rgba(138, 43, 226, 0.1);
+}
+
+
+.moving_r {
+    position: relative;
+    overflow: hidden;
+}
+
+.moving_r .moving_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(50deg, rgba(240, 114, 114, 0.6), rgba(243, 227, 3, 0.904));
+    right: -100%;
+    color: aquamarine;
+    display: flex;
+    /* 垂直置中 */
+    align-items: center;
+    /* 水平置中 */
+    justify-content: center;
+    /* 慢慢出現和慢慢離開 */
+    transition: right 1s;
+
+}
+
+
+.moving_r:hover .moving_box {
+    right: 0;
+
+}
+
+.moving_t {
+    position: relative;
+    overflow: hidden;
+}
+
+.moving_t .moving_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        conic-gradient(from 45deg at 30% 30%, 
+            rgba(138, 43, 226, 0.08) 0deg,
+            transparent 60deg,
+            rgba(255, 20, 147, 0.08) 120deg,
+            transparent 180deg,
+            rgba(0, 191, 255, 0.08) 240deg,
+            transparent 300deg,
+            rgba(138, 43, 226, 0.08) 360deg
+        ),
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.06), transparent 50%),
+        linear-gradient(160deg, 
+            rgba(0, 0, 0, 0.15) 0%, 
+            rgba(255, 255, 255, 0.04) 50%, 
+            rgba(0, 0, 0, 0.15) 100%
+        );
+    transform: translateY(-100%);
+    transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+    color: rgba(255, 255, 255, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.95em;
+    text-shadow: 
+        0 0 20px rgba(138, 43, 226, 0.4),
+        0 0 40px rgba(0, 191, 255, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px) saturate(150%) contrast(120%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%) contrast(120%);
+    border: 2px solid transparent;
+    border-image: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.3), 
+        rgba(255, 255, 255, 0.05),
+        rgba(138, 43, 226, 0.2)
+    ) 1;
+    box-shadow: 
+        inset 2px 2px 8px rgba(255, 255, 255, 0.15),
+        inset -2px -2px 8px rgba(0, 0, 0, 0.2),
+        0 8px 32px rgba(138, 43, 226, 0.15);
+    overflow: hidden;
+}
+
+.moving_t .moving_box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(255, 255, 255, 0.03) 50%, 
+        transparent 70%
+    );
+    transform: translateY(0);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.moving_t:hover .moving_box {
+    top: 0;
+    transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background: 
+        conic-gradient(from 45deg at 30% 30%, 
+            rgba(138, 43, 226, 0.15) 0deg,
+            transparent 60deg,
+            rgba(255, 20, 147, 0.15) 120deg,
+            transparent 180deg,
+            rgba(0, 191, 255, 0.15) 240deg,
+            transparent 300deg,
+            rgba(138, 43, 226, 0.15) 360deg
+        ),
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.12), transparent 50%),
+        linear-gradient(160deg, 
+            rgba(0, 0, 0, 0.2) 0%, 
+            rgba(255, 255, 255, 0.08) 50%, 
+            rgba(0, 0, 0, 0.2) 100%
+        );
+    border-image: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.5), 
+        rgba(138, 43, 226, 0.3),
+        rgba(0, 191, 255, 0.3)
+    ) 1;
+    box-shadow: 
+        inset 2px 2px 12px rgba(255, 255, 255, 0.25),
+        inset -2px -2px 12px rgba(0, 0, 0, 0.3),
+        0 16px 48px rgba(138, 43, 226, 0.25),
+        0 0 80px rgba(0, 191, 255, 0.15);
+    transform: scale(1.005);
+}
+
+.moving_b {
+    position: relative;
+    overflow: hidden;
+}
+
+.moving_b .moving_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0.02) 0px,
+            rgba(255, 255, 255, 0.02) 2px,
+            transparent 2px,
+            transparent 4px
+        ),
+        radial-gradient(ellipse at 15% 85%, rgba(50, 205, 50, 0.15), transparent 55%),
+        radial-gradient(ellipse at 85% 15%, rgba(255, 140, 0, 0.15), transparent 55%),
+        linear-gradient(20deg, 
+            rgba(10, 10, 30, 0.25) 0%, 
+            rgba(30, 30, 60, 0.15) 50%, 
+            rgba(10, 10, 30, 0.25) 100%
+        );
+    bottom: -100%;
+    color: rgba(255, 255, 255, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-shadow: 
+        0 0 30px rgba(50, 205, 50, 0.5),
+        0 0 60px rgba(255, 140, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(18px) saturate(180%) hue-rotate(10deg);
+    -webkit-backdrop-filter: blur(18px) saturate(180%) hue-rotate(10deg);
+    border: 1.5px solid rgba(255, 255, 255, 0.12);
+    border-radius: 2px;
+    box-shadow: 
+        inset -3px -3px 12px rgba(50, 205, 50, 0.08),
+        inset 3px 3px 12px rgba(255, 140, 0, 0.08),
+        0 12px 48px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    overflow: hidden;
+}
+
+.moving_b .moving_box::after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(50, 205, 50, 0.6) 20%,
+        rgba(255, 140, 0, 0.6) 50%,
+        rgba(50, 205, 50, 0.6) 80%,
+        transparent 100%
+    );
+    bottom: 0;
+    left: -25%;
+    animation: scan-line 2.5s ease-in-out infinite;
+    filter: blur(1px);
+}
+
+@keyframes scan-line {
+    0%, 100% { transform: translateY(0); opacity: 0; }
+    10% { opacity: 1; }
+    50% { transform: translateY(-100%); opacity: 0.8; }
+    90% { opacity: 1; }
+}
+
+.moving_b:hover .moving_box {
+    bottom: 0;
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    background: 
+        repeating-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0.03) 0px,
+            rgba(255, 255, 255, 0.03) 2px,
+            transparent 2px,
+            transparent 4px
+        ),
+        radial-gradient(ellipse at 15% 85%, rgba(50, 205, 50, 0.25), transparent 50%),
+        radial-gradient(ellipse at 85% 15%, rgba(255, 140, 0, 0.25), transparent 50%),
+        linear-gradient(20deg, 
+            rgba(20, 20, 40, 0.35) 0%, 
+            rgba(40, 40, 70, 0.25) 50%, 
+            rgba(20, 20, 40, 0.35) 100%
+        );
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        inset -4px -4px 16px rgba(50, 205, 50, 0.12),
+        inset 4px 4px 16px rgba(255, 140, 0, 0.12),
+        0 20px 64px rgba(0, 0, 0, 0.35),
+        0 0 100px rgba(50, 205, 50, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+
+/* 咖啡頁面 */
+.fw-100 { font-weight: 100; }
+.fw-200 { font-weight: 200; }
+.fw-300 { font-weight: 300; }
+.fw-400 { font-weight: 400; }
+.fw-500 { font-weight: 500; }
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+.fw-800 { font-weight: 800; }
+.fw-900 { font-weight: 900; }
+
+:root {
+    --cream: #F5EFE0;
+    --warm-white: #FAF7F2;
+    --espresso: #1A0F08;
+    --roast: #2C1810;
+    --caramel: #C8853A;
+    --gold: #D4A853;
+    --foam: #EDE3CE;
+    --ash: #6B5F54;
+    --grain-opacity: 0.045;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+
+  body {
+    background: var(--espresso);
+    color: var(--cream);
+    font-family: 'Zen Maru Gothic', sans-serif;
+    cursor: none;
+    overflow-x: hidden;
+  }
+
+  /* ── GRAIN OVERLAY ── */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: var(--grain-opacity);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+    animation: grainShift 0.5s steps(1) infinite;
+  }
+
+  @keyframes grainShift {
+    0%   { background-position: 0 0; }
+    20%  { background-position: -30px -15px; }
+    40%  { background-position: 15px 25px; }
+    60%  { background-position: -20px 10px; }
+    80%  { background-position: 25px -20px; }
+    100% { background-position: 0 0; }
+  }
+
+  /* ── CUSTOM CURSOR ── */
+  #cursor-dot {
+    position: fixed;
+    width: 8px; height: 8px;
+    background: var(--caramel);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s, width 0.3s, height 0.3s, background 0.3s;
+    mix-blend-mode: screen;
+  }
+  #cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1px solid rgba(200,133,58,0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: transform 0.08s, width 0.4s cubic-bezier(.23,1,.32,1), height 0.4s cubic-bezier(.23,1,.32,1), opacity 0.3s;
+    mix-blend-mode: screen;
+  }
+  body.cursor-hover #cursor-dot  { width: 16px; height: 16px; background: var(--gold); }
+  body.cursor-hover #cursor-ring { width: 60px; height: 60px; opacity: 0.6; }
+
+  /* ── LOADER ── */
+  #loader {
+    position: fixed; inset: 0; z-index: 9998;
+    background: var(--espresso);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+  }
+  #loader-line {
+    width: 0%; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--caramel), var(--gold), transparent);
+    margin-top: 24px;
+    transition: width 1.8s cubic-bezier(.77,0,.18,1);
+  }
+  #loader-text {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(2rem, 6vw, 5rem);
+    letter-spacing: 0.3em;
+    color: var(--cream);
+    opacity: 0;
+    animation: fadeIn 0.8s ease 0.3s forwards;
+  }
+  @keyframes fadeIn { to { opacity: 1; } }
+
+  /* ── NOISE CANVAS ── */
+  #bg-canvas {
+    position: fixed; inset: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 24px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    mix-blend-mode: normal;
+  }
+  .nav-logo {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.25em;
+    color: var(--cream);
+    text-decoration: none;
+    position: relative;
+  }
+  .nav-logo span {
+    color: var(--caramel);
+    font-style: italic;
+  }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--foam);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s, color 0.3s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0%; height: 1px;
+    background: var(--caramel);
+    transition: width 0.4s cubic-bezier(.23,1,.32,1);
+  }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--espresso);
+    background: var(--caramel);
+    padding: 10px 24px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: hidden;
+  }
+
+  .hero-col {
+    position: relative;
+    overflow: hidden;
+    border-right: 1px solid rgba(245,239,224,0.06);
+    transform-origin: top center;
+  }
+  .hero-col:last-child { border-right: none; }
+
+  .hero-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.15);
+    transition: transform 8s ease;
+    filter: brightness(0.55) saturate(1.1);
+  }
+
+  .hero-col:hover img { transform: scale(1.0); }
+
+  .hero-col-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(26,15,8,0.2) 0%, rgba(26,15,8,0.65) 100%);
+  }
+
+  .col-number {
+    position: absolute;
+    top: 32px; left: 16px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.25em;
+    color: rgba(245,239,224,0.3);
+  }
+
+  .col-tag {
+    position: absolute;
+    bottom: 48px; left: 0; right: 0;
+    text-align: center;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-style: italic;
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+    color: rgba(245,239,224,0.5);
+    letter-spacing: 0.15em;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: opacity 0.6s, transform 0.6s;
+  }
+  .hero-col:hover .col-tag { opacity: 1; transform: translateY(0); }
+
+  /* ── HERO CENTERED CONTENT ── */
+  .hero-center-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    pointer-events: none;
+    text-align: center;
+    padding: 0 24px;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--caramel);
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  .hero-title {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(3rem, 9vw, 8rem);
+    line-height: 0.9;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+    overflow: visible;
+  }
+
+  .hero-title-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  .hero-title-line.italic {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-subtitle {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-style: italic;
+    font-size: clamp(1rem, 1.8vw, 1.4rem);
+    color: rgba(245,239,224,0.6);
+    margin-top: 28px;
+    letter-spacing: 0.05em;
+    max-width: 520px;
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  .hero-cta-group {
+    margin-top: 48px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(16px);
+    pointer-events: all;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-primary {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--espresso);
+    background: var(--caramel);
+    padding: 16px 40px;
+    border-radius: 2px;
+    text-decoration: none;
+    border: none;
+    cursor: none;
+    transition: background 0.3s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+  }
+  .btn-primary:hover { background: var(--gold); transform: translateY(-2px); }
+  .btn-primary:hover::before { transform: translateX(100%); }
+
+  .btn-ghost {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: transparent;
+    padding: 16px 40px;
+    border-radius: 2px;
+    text-decoration: none;
+    border: 1px solid rgba(245,239,224,0.25);
+    cursor: none;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ── SCROLL INDICATOR ── */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+  }
+  .scroll-indicator span {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(245,239,224,0.35);
+  }
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, var(--caramel), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+  @keyframes scrollPulse {
+    0% { transform: scaleY(0); transform-origin: top; opacity: 1; }
+    50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+    100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-section {
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid rgba(245,239,224,0.08);
+    border-bottom: 1px solid rgba(245,239,224,0.08);
+    overflow: hidden;
+    padding: 18px 0;
+    background: rgba(26,15,8,0.5);
+  }
+  .marquee-track {
+    display: flex;
+    gap: 0;
+    animation: marquee 30s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 36px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-style: italic;
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    color: rgba(245,239,224,0.4);
+    letter-spacing: 0.1em;
+  }
+  .marquee-dot {
+    width: 4px; height: 4px;
+    background: var(--caramel);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── SECTION BASE ── */
+  section {
+    position: relative;
+    z-index: 10;
+  }
+
+  .section-label {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--caramel);
+    margin-bottom: 16px;
+  }
+
+  /* ── VALUES ── */
+  #values {
+    padding: clamp(80px, 12vw, 160px) clamp(24px, 6vw, 80px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+  }
+
+  .values-left h2 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    line-height: 1.05;
+    color: var(--cream);
+    margin-bottom: 32px;
+  }
+  .values-left h2 em {
+    font-style: italic;
+    color: var(--gold);
+    display: block;
+  }
+
+  .values-left p {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.8;
+    color: rgba(245,239,224,0.6);
+    max-width: 480px;
+  }
+
+  .values-right {
+    display: grid;
+    gap: 2px;
+  }
+
+  .value-card {
+    background: rgba(245,239,224,0.03);
+    border: 1px solid rgba(245,239,224,0.06);
+    border-radius: 4px;
+    padding: 32px 36px;
+    transition: background 0.4s, border-color 0.4s, transform 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+  .value-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--caramel), var(--gold));
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s cubic-bezier(.23,1,.32,1);
+  }
+  .value-card:hover {
+    background: rgba(245,239,224,0.06);
+    border-color: rgba(200,133,58,0.2);
+    transform: translateX(6px);
+  }
+  .value-card:hover::before { transform: scaleY(1); }
+
+  .value-number {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.3em;
+    color: var(--caramel);
+    margin-bottom: 12px;
+  }
+  .value-title {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1.3rem;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+  .value-desc {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(245,239,224,0.5);
+  }
+
+  /* ── MENU ── */
+  #menu {
+    padding: clamp(80px, 12vw, 140px) clamp(24px, 6vw, 80px);
+    background: rgba(245,239,224,0.02);
+    border-top: 1px solid rgba(245,239,224,0.06);
+  }
+
+  .menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 64px;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .menu-header h2 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 4.5rem);
+    line-height: 1;
+    color: var(--cream);
+  }
+  .menu-header h2 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .menu-filter {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,239,224,0.4);
+    background: transparent;
+    border: 1px solid rgba(245,239,224,0.1);
+    border-radius: 2px;
+    padding: 8px 18px;
+    cursor: none;
+    transition: all 0.3s;
+  }
+  .filter-btn.active, .filter-btn:hover {
+    color: var(--espresso);
+    background: var(--caramel);
+    border-color: var(--caramel);
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2px;
+  }
+
+  .menu-card {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: none;
+  }
+  .menu-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transform: scale(1.08);
+    transition: transform 0.8s cubic-bezier(.23,1,.32,1);
+    filter: brightness(0.6) saturate(1.1);
+  }
+  .menu-card:hover img { transform: scale(1.0); filter: brightness(0.7) saturate(1.2); }
+
+  .menu-card-info {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 24px;
+    background: linear-gradient(transparent, rgba(26,15,8,0.92));
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(.23,1,.32,1), opacity 0.5s;
+  }
+  .menu-card:hover .menu-card-info { transform: translateY(0); opacity: 1; }
+
+  .menu-card-tag {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--caramel);
+    margin-bottom: 6px;
+  }
+  .menu-card-name {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1.3rem;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+  .menu-card-price {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--gold);
+  }
+
+  .menu-card-badge {
+    position: absolute;
+    top: 16px; right: 16px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--espresso);
+    background: var(--gold);
+    padding: 4px 10px;
+    border-radius: 1px;
+  }
+
+  /* ── STORY ── */
+  #story {
+    padding: clamp(80px, 12vw, 160px) clamp(24px, 6vw, 80px);
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(40px, 6vw, 100px);
+    align-items: center;
+  }
+
+  .story-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .story-img-wrap {
+    overflow: hidden;
+    border-radius: 4px;
+    aspect-ratio: 2/3;
+  }
+  .story-img-wrap:first-child { transform: translateY(-24px); }
+  .story-img-wrap:last-child  { transform: translateY(24px); }
+  .story-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.75) saturate(1.1);
+    transition: transform 0.8s cubic-bezier(.23,1,.32,1);
+  }
+  .story-img-wrap:hover img { transform: scale(1.04); }
+
+  .story-text h2 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 24px;
+  }
+  .story-text h2 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .story-text p {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    line-height: 1.9;
+    color: rgba(245,239,224,0.6);
+    margin-bottom: 20px;
+  }
+
+  .story-stats {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2px;
+    margin-top: 48px;
+    border: 1px solid rgba(245,239,224,0.07);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .stat-box {
+    padding: 24px 20px;
+    border-right: 1px solid rgba(245,239,224,0.07);
+    text-align: center;
+    background: rgba(245,239,224,0.02);
+  }
+  .stat-box:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--gold);
+    display: block;
+  }
+  .stat-label {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245,239,224,0.35);
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ── PARTNERS ── */
+  #partners {
+    padding: clamp(60px, 8vw, 100px) clamp(24px, 6vw, 80px);
+    border-top: 1px solid rgba(245,239,224,0.06);
+    text-align: center;
+  }
+  #partners p {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(245,239,224,0.25);
+    margin-bottom: 40px;
+  }
+  .partners-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(32px, 5vw, 64px);
+    flex-wrap: wrap;
+  }
+  .partner-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(245,239,224,0.2);
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.15em;
+    transition: color 0.3s;
+    text-transform: uppercase;
+  }
+  .partner-logo:hover { color: rgba(245,239,224,0.5); }
+  .partner-logo iconify-icon { font-size: 1.4rem; }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials {
+    padding: clamp(80px, 12vw, 140px) clamp(24px, 6vw, 80px);
+    background: rgba(44,24,16,0.4);
+    border-top: 1px solid rgba(245,239,224,0.06);
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+    margin-top: 60px;
+  }
+  .testimonial-card {
+    background: rgba(245,239,224,0.03);
+    border: 1px solid rgba(245,239,224,0.07);
+    border-radius: 4px;
+    padding: 36px 32px;
+    position: relative;
+    transition: background 0.4s, transform 0.4s;
+  }
+  .testimonial-card:hover {
+    background: rgba(245,239,224,0.055);
+    transform: translateY(-4px);
+  }
+  .quote-mark {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 5rem;
+    line-height: 1;
+    color: rgba(200,133,58,0.15);
+    position: absolute;
+    top: 12px; left: 24px;
+  }
+  .testimonial-text {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(245,239,224,0.7);
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .author-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(200,133,58,0.3);
+  }
+  .author-name {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.15em;
+    color: var(--cream);
+    text-transform: uppercase;
+    display: block;
+  }
+  .author-handle {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    color: rgba(245,239,224,0.3);
+    display: block;
+    margin-top: 2px;
+  }
+  .star-row { display: flex; gap: 4px; margin-bottom: 16px; }
+  .star-row iconify-icon { color: var(--gold); font-size: 0.8rem; }
+
+  /* ── CTA SECTION ── */
+  #cta-section {
+    padding: clamp(80px, 12vw, 160px) clamp(24px, 6vw, 80px);
+    text-align: center;
+    position: relative;
+    border-top: 1px solid rgba(245,239,224,0.06);
+  }
+  #cta-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(200,133,58,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  #cta-section h2 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(2.5rem, 7vw, 7rem);
+    line-height: 0.95;
+    color: var(--cream);
+    margin-bottom: 24px;
+  }
+  #cta-section h2 em { font-style: italic; color: var(--gold); }
+  #cta-section p {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-style: italic;
+    font-size: clamp(1rem, 1.8vw, 1.3rem);
+    color: rgba(245,239,224,0.5);
+    margin-bottom: 48px;
+    max-width: 500px;
+    margin-left: auto; margin-right: auto;
+  }
+  .cta-btn-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* ── INFO BAR ── */
+  #info-bar {
+    padding: 48px clamp(24px, 6vw, 80px);
+    border-top: 1px solid rgba(245,239,224,0.06);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+  }
+  .info-item {}
+  .info-item-label {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--caramel);
+    margin-bottom: 8px;
+  }
+  .info-item-value {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1rem;
+    color: rgba(245,239,224,0.65);
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 40px clamp(24px, 6vw, 80px);
+    border-top: 1px solid rgba(245,239,224,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-logo {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    color: var(--cream);
+  }
+  .footer-logo span { color: var(--caramel); font-style: italic; }
+  .footer-copy {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.2em;
+    color: rgba(245,239,224,0.2);
+    text-transform: uppercase;
+  }
+  .footer-socials { display: flex; gap: 16px; }
+  .footer-socials a {
+    color: rgba(245,239,224,0.3);
+    transition: color 0.3s;
+    font-size: 1.1rem;
+  }
+  .footer-socials a:hover { color: var(--gold); }
+
+  /* ── VERTICAL GUIDE LINES ── */
+  .v-guide {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: rgba(245,239,224,0.03);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── PARALLAX DEPTH LAYERS ── */
+  .depth-layer {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* ── MOTION BLUR TRAIL (canvas overlay) ── */
+  #trail-canvas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9997;
+    opacity: 0.25;
+  }
+
+  /* ── MENU TOGGLE (mobile) ── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: none;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px; height: 1px;
+    background: var(--cream);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s cubic-bezier(.23,1,.32,1), transform 0.9s cubic-bezier(.23,1,.32,1);
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── STAGGER COLS ── */
+  .stagger-col {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 20px 28px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    #hero { grid-template-columns: repeat(2, 1fr); }
+    #values { grid-template-columns: 1fr; }
+    .values-left p { max-width: 100%; }
+    #story { grid-template-columns: 1fr; }
+    .story-images { display: none; }
+  }
+  @media (max-width: 600px) {
+    #hero { grid-template-columns: 1fr 1fr; }
+    .hero-title { font-size: clamp(2.8rem, 14vw, 5rem); }
+    nav { padding: 16px 20px; }
+    #values { padding: 60px 20px; }
+    #menu { padding: 60px 20px; }
+    #story { padding: 60px 20px; }
+    #testimonials { padding: 60px 20px; }
+    #cta-section { padding: 60px 20px; }
+    footer { padding: 32px 20px; }
+    #info-bar { padding: 36px 20px; }
+  }

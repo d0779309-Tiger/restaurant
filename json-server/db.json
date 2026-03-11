@@ -1,0 +1,280 @@
+{
+  "orders": [
+    {
+      "id": "1",
+      "username": "王XX",
+      "pname": "珍珠鮮奶茶",
+      "ice": "正常",
+      "toppings": [
+        "粉圓"
+      ],
+      "quantity": 2,
+      "unit_price": 50,
+      "topping_fee": 10,
+      "total_price": 120,
+      "remark": "",
+      "status": "confirmed",
+      "created_at": "2026-03-01 09:15:22",
+      "updated_at": "2026-03-01 09:15:22"
+    },
+    {
+      "id": "2",
+      "username": "陳XX",
+      "pname": "鮮奶茶",
+      "ice": "去冰",
+      "toppings": [],
+      "quantity": 1,
+      "unit_price": 50,
+      "topping_fee": 0,
+      "total_price": 50,
+      "remark": "",
+      "status": "confirmed",
+      "created_at": "2026-03-01 09:22:10",
+      "updated_at": "2026-03-01 09:22:10"
+    },
+    {
+      "id": "3",
+      "username": "林XX",
+      "pname": "綠茶拿鐵",
+      "ice": "少冰",
+      "toppings": [
+        "QQ",
+        "紅豆"
+      ],
+      "quantity": 3,
+      "unit_price": 55,
+      "topping_fee": 20,
+      "total_price": 225,
+      "remark": "不要太甜",
+      "status": "confirmed",
+      "created_at": "2026-03-01 09:35:47",
+      "updated_at": "2026-03-01 09:35:47"
+    },
+    {
+      "id": "4",
+      "username": "張XX",
+      "pname": "烏龍奶茶",
+      "ice": "微冰",
+      "toppings": [
+        "粉圓",
+        "綠豆"
+      ],
+      "quantity": 1,
+      "unit_price": 50,
+      "topping_fee": 20,
+      "total_price": 70,
+      "remark": "",
+      "status": "pending",
+      "created_at": "2026-03-01 10:02:33",
+      "updated_at": "2026-03-01 10:02:33"
+    },
+    {
+      "id": "5",
+      "username": "李XX",
+      "pname": "芋頭鮮奶",
+      "ice": "去冰",
+      "toppings": [
+        "紅豆"
+      ],
+      "quantity": 2,
+      "unit_price": 60,
+      "topping_fee": 10,
+      "total_price": 140,
+      "remark": "芋頭多一點",
+      "status": "confirmed",
+      "created_at": "2026-03-01 10:18:05",
+      "updated_at": "2026-03-01 10:18:05"
+    },
+    {
+      "id": "6",
+      "username": "黃XX",
+      "pname": "冬瓜檸檬",
+      "ice": "正常",
+      "toppings": [],
+      "quantity": 4,
+      "unit_price": 40,
+      "topping_fee": 0,
+      "total_price": 160,
+      "remark": "",
+      "status": "confirmed",
+      "created_at": "2026-03-01 10:30:59",
+      "updated_at": "2026-03-01 10:30:59"
+    },
+    {
+      "id": "7",
+      "username": "吳XX",
+      "pname": "紅茶拿鐵",
+      "ice": "少冰",
+      "toppings": [
+        "QQ"
+      ],
+      "quantity": 1,
+      "unit_price": 50,
+      "topping_fee": 10,
+      "total_price": 60,
+      "remark": "少糖",
+      "status": "cancelled",
+      "created_at": "2026-03-01 11:05:14",
+      "updated_at": "2026-03-01 11:08:30"
+    },
+    {
+      "id": "8",
+      "username": "劉XX",
+      "pname": "草莓奶昔",
+      "ice": "正常",
+      "toppings": [
+        "粉圓",
+        "QQ",
+        "紅豆"
+      ],
+      "quantity": 2,
+      "unit_price": 65,
+      "topping_fee": 30,
+      "total_price": 190,
+      "remark": "",
+      "status": "confirmed",
+      "created_at": "2026-03-01 11:22:41",
+      "updated_at": "2026-03-01 11:22:41"
+    },
+    {
+      "id": "9",
+      "username": "蔡XX",
+      "pname": "抹茶歐蕾",
+      "ice": "微冰",
+      "toppings": [
+        "綠豆"
+      ],
+      "quantity": 3,
+      "unit_price": 55,
+      "topping_fee": 10,
+      "total_price": 195,
+      "remark": "抹茶味重一點",
+      "status": "pending",
+      "created_at": "2026-03-01 13:44:08",
+      "updated_at": "2026-03-01 13:44:08"
+    },
+    {
+      "id": "10",
+      "username": "鄭XX",
+      "pname": "百香果綠茶",
+      "ice": "去冰",
+      "toppings": [],
+      "quantity": 5,
+      "unit_price": 45,
+      "topping_fee": 0,
+      "total_price": 225,
+      "remark": "",
+      "status": "confirmed",
+      "created_at": "2026-03-01 14:10:52",
+      "updated_at": "2026-03-01 14:10:52"
+    },
+    {
+      "id": "0cc1",
+      "username": "asd",
+      "pname": "sd",
+      "ice": "少冰",
+      "toppings": [
+        "粉圓",
+        "QQ",
+        "紅豆",
+        "綠豆"
+      ],
+      "quantity": "51",
+      "unit_price": "25",
+      "topping_fee": 40,
+      "total_price": 3315,
+      "created_at": "2026/3/5 下午3:43:33"
+    },
+    {
+      "id": "fe10",
+      "username": "df",
+      "pname": "asd",
+      "ice": "少冰",
+      "toppings": [
+        "粉圓",
+        "紅豆",
+        "綠豆"
+      ],
+      "quantity": "32",
+      "unit_price": "30",
+      "topping_fee": 30,
+      "total_price": 1920,
+      "created_at": "2026/3/5 下午3:43:52"
+    },
+    {
+      "id": "debf",
+      "username": "df",
+      "pname": "sdf",
+      "ice": "少冰",
+      "toppings": [
+        "粉圓",
+        "QQ",
+        "紅豆",
+        "綠豆"
+      ],
+      "quantity": "40",
+      "unit_price": "25",
+      "topping_fee": 40,
+      "total_price": 2600,
+      "created_at": "2026/3/5 下午3:44:17"
+    },
+    {
+      "id": "8cf7",
+      "username": "fgfg",
+      "pname": "dfs",
+      "ice": "微冰",
+      "toppings": [
+        "粉圓"
+      ],
+      "quantity": "29",
+      "unit_price": "15",
+      "topping_fee": 10,
+      "total_price": 725,
+      "created_at": "2026/3/5 下午4:03:42"
+    }
+  ],
+  "reservation": [
+    {
+      "id": "1",
+      "username": "王小X",
+      "member": "1~2人",
+      "phone": "0912345678",
+      "date": "115/03/09",
+      "purpose": "",
+      "remark": "",
+      "created_at": ""
+    },
+    {
+      "id": "2d13",
+      "username": "asd",
+      "phone": "0978782730",
+      "guests": "3~4人",
+      "date": "0103-10-06",
+      "time": "16:00",
+      "purpose": [
+        "朋友聚餐",
+        "商業聚餐"
+      ],
+      "remark": "oregjoiperjg",
+      "created_at": "2026/3/9 下午3:46:55"
+    },
+    {
+      "id": "04af",
+      "username": "陳XX",
+      "phone": "0912345678",
+      "member": "4~8人",
+      "date": "0103-05-26",
+      "time": "15:30",
+      "purpose": [
+        "家庭聚會",
+        "朋友聚餐",
+        "商業聚餐",
+        "慶生活動",
+        "其他"
+      ],
+      "remark": "你好嗎",
+      "created_at": "2026/3/9 下午3:48:45"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

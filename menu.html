@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="stylesheet" href="CSS (1)/cafe.css">
+</head>
+
+<body>
+
+<!-- CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<canvas id="trail-canvas"></canvas>
+<canvas id="bg-canvas"></canvas>
+
+<!-- NAVIGATION -->
+<nav id="main-nav">
+  <a href="figma1.html" class="nav-logo">GR<span>Ã</span>O</a>
+  <ul class="nav-links">
+    <li><a href="menu.html">菜單</a></li>
+    <li><a href="story.html">關於我們</a></li>
+    <li><a href="testimonials.html">評價</a></li>
+    <li><a href="cta.html">預約</a></li>
+  </ul>
+  <a href="cta.html" class="nav-cta">立即預訂</a>
+  <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MENU -->
+<section id="menu" style="padding-top: 120px;">
+  <div class="menu-header reveal">
+    <div>
+      <div class="section-label">精選品項</div>
+      <h2>今日<em>推薦</em></h2>
+    </div>
+    <div class="menu-filter">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="coffee">咖啡</button>
+      <button class="filter-btn" data-filter="brunch">早午餐</button>
+      <button class="filter-btn" data-filter="light">輕食</button>
+    </div>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-card reveal" data-category="coffee">
+      <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?w=500&q=85&fit=crop" alt="Espresso">
+      <div class="menu-card-badge">人氣</div>
+      <div class="menu-card-info">
+        <div class="menu-card-tag">Espresso</div>
+        <div class="menu-card-name">衣索比亞 耶加雪菲</div>
+        <div class="menu-card-price">NT$ 160</div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-category="coffee" style="transition-delay:0.08s">
+      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&q=85&fit=crop" alt="Latte">
+      <div class="menu-card-info">
+        <div class="menu-card-tag">Latte</div>
+        <div class="menu-card-name">燕麥拿鐵 黑糖焦糖</div>
+        <div class="menu-card-price">NT$ 195</div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-category="brunch" style="transition-delay:0.16s">
+      <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=500&q=85&fit=crop" alt="Eggs Benedict">
+      <div class="menu-card-badge">主廚推薦</div>
+      <div class="menu-card-info">
+        <div class="menu-card-tag">Brunch</div>
+        <div class="menu-card-name">班尼迪克蛋 松露醬</div>
+        <div class="menu-card-price">NT$ 380</div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-category="light" style="transition-delay:0.24s">
+      <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500&q=85&fit=crop" alt="Pancakes">
+      <div class="menu-card-info">
+        <div class="menu-card-tag">Light Bites</div>
+        <div class="menu-card-name">舒芙蕾鬆餅 莓果優格</div>
+        <div class="menu-card-price">NT$ 320</div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-category="brunch" style="transition-delay:0.32s">
+      <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500&q=85&fit=crop" alt="Avocado Toast">
+      <div class="menu-card-info">
+        <div class="menu-card-tag">Brunch</div>
+        <div class="menu-card-name">酪梨吐司 煙燻鮭魚</div>
+        <div class="menu-card-price">NT$ 350</div>
+      </div>
+    </div>
+    <div class="menu-card reveal" data-category="coffee" style="transition-delay:0.40s">
+      <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&q=85&fit=crop" alt="Cold Brew">
+      <div class="menu-card-info">
+        <div class="menu-card-tag">Cold Brew</div>
+        <div class="menu-card-name">氮氣冷萃 黑金特調</div>
+        <div class="menu-card-price">NT$ 220</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">GR<span>Ã</span>O — Coffee &amp; Brunch Atelier</div>
+  <div class="footer-copy">© 2025 GRÃO · Crafted with Precision</div>
+  <div class="footer-socials">
+    <a href="#"><iconify-icon icon="solar:instagram-bold"></iconify-icon></a>
+    <a href="#"><iconify-icon icon="solar:facebook-bold"></iconify-icon></a>
+    <a href="#"><iconify-icon icon="solar:twitter-bold"></iconify-icon></a>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="JS/cafe.js"></script>
+</body>
+</html>

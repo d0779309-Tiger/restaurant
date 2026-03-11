@@ -1,0 +1,52 @@
+[
+    {
+        "groupName": "BLACKPINK",
+        "members": 4,
+        "topSong": "DDU-DU DDU-DU"
+    },
+    {
+        "groupName": "TWICE",
+        "members": 9,
+        "topSong": "Cheer Up"
+    },
+    {
+        "groupName": "aespa",
+        "members": 4,
+        "topSong": "Next Level"
+    },
+    {
+        "groupName": "IVE",
+        "members": 6,
+        "topSong": "LOVE DIVE"
+    },
+    {
+        "groupName": "NewJeans",
+        "members": 5,
+        "topSong": "Hype Boy"
+    },
+    {
+        "groupName": "ITZY",
+        "members": 5,
+        "topSong": "DALLA DALLA"
+    },
+    {
+        "groupName": "Red Velvet",
+        "members": 5,
+        "topSong": "Psycho"
+    },
+    {
+        "groupName": "MAMAMOO",
+        "members": 4,
+        "topSong": "You're the Best"
+    },
+    {
+        "groupName": "Girls' Generation",
+        "members": 8,
+        "topSong": "Gee"
+    },
+    {
+        "groupName": "STAYC",
+        "members": 6,
+        "topSong": "ASAP"
+    }
+]

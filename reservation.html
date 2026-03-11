@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRÃO — 訂位系統</title>
+    <link rel="stylesheet" href="CSS (1)/bootstrap.css">
+    <link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+    <style>
+        /* ── 覆蓋系統游標 ── */
+        *, a, button, input, select, textarea, label {
+            cursor: none !important;
+        }
+
+        /* ── 咖啡色系主題 ── */
+        body {
+            background: #1A0F08;
+            color: #F5EFE0;
+            font-family: 'Zen Maru Gothic', sans-serif;
+        }
+
+        .container {
+            max-width: 640px;
+            padding-top: 48px;
+            padding-bottom: 80px;
+        }
+
+        /* 標題 */
+        .page-title {
+            font-size: clamp(2rem, 6vw, 3rem);
+            /* font-weight via .fw-900 */
+            letter-spacing: 0.3em;
+            color: #F5EFE0;
+            text-align: center;
+            background: #2C1810;
+            border: 1px solid rgba(200,133,58,0.3);
+            border-radius: 8px;
+            padding: 20px 12px 18px;
+            margin-bottom: 32px;
+        }
+        .page-title span { color: #C8853A; font-style: italic; }
+
+        /* 區塊標籤 */
+        .field-label {
+            font-size: 1.5rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: #C8853A;
+            margin-bottom: 6px;
+            margin-top: 20px;
+            display: block;
+        }
+
+        /* input / select / textarea */
+        .form-control, .form-select {
+            background: rgba(245,239,224,0.05) !important;
+            border: 1px solid rgba(200,133,58,0.25) !important;
+            color: #F5EFE0 !important;
+            border-radius: 4px !important;
+        }
+        .form-control::placeholder { color: rgba(245,239,224,0.3) !important; }
+        .form-control:focus, .form-select:focus {
+            background: rgba(245,239,224,0.08) !important;
+            border-color: #C8853A !important;
+            box-shadow: 0 0 0 2px rgba(200,133,58,0.2) !important;
+            color: #F5EFE0 !important;
+        }
+        .form-select option { background: #2C1810; color: #F5EFE0; }
+
+        /* floating label */
+        .form-floating label { color: rgba(245,239,224,0.4) !important; }
+        .form-floating > .form-control:focus ~ label,
+        .form-floating > .form-control:not(:placeholder-shown) ~ label {
+            color: #C8853A !important;
+        }
+
+        /* checkbox */
+        .form-check-input {
+            background-color: rgba(245,239,224,0.05) !important;
+            border-color: rgba(200,133,58,0.4) !important;
+        }
+        .form-check-input:checked {
+            background-color: #C8853A !important;
+            border-color: #C8853A !important;
+        }
+        .form-check-label { color: rgba(245,239,224,0.8); }
+
+        /* valid / invalid */
+        .valid-feedback   { color: #5EBB4B; }
+        .invalid-feedback { color: #C8853A; }
+
+        /* 備註區塊 */
+        .section-divider {
+            border: none;
+            border-top: 1px solid rgba(200,133,58,0.15);
+            margin: 28px 0;
+        }
+
+        /* 確認 / 取消 按鈕 */
+        .btn-confirm {
+            background: #C8853A;
+            color: #1A0F08;
+            border: none;
+            /* font-weight via .fw-900 */
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 12px 36px;
+            border-radius: 4px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn-confirm:hover { background: #D4A853; transform: translateY(-1px); }
+
+        .btn-cancel {
+            background: transparent;
+            color: rgba(245,239,224,0.4);
+            border: 1px solid rgba(245,239,224,0.15);
+            /* font-weight via .fw-500 */
+            letter-spacing: 0.1em;
+            padding: 12px 28px;
+            border-radius: 4px;
+            transition: border-color 0.3s, color 0.3s;
+        }
+        .btn-cancel:hover { border-color: rgba(245,239,224,0.4); color: #F5EFE0; }
+
+        /* 明細區塊 */
+        .showcast { margin-top: 40px; }
+        .detail-title {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            /* font-weight via .fw-900 */
+            letter-spacing: 0.2em;
+            color: #D4A853;
+            text-align: center;
+            border: 1px solid rgba(200,133,58,0.3);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            background: rgba(44,24,16,0.6);
+        }
+        #showlist {
+            background: rgba(245,239,224,0.03);
+            border: 1px solid rgba(200,133,58,0.2) !important;
+            border-radius: 8px !important;
+        }
+        #showlist h1 {
+            font-size: 1.1rem;
+            color: #F5EFE0;
+            border-bottom: 1px solid rgba(245,239,224,0.06);
+            padding: 10px 0;
+            margin: 0;
+        }
+        #showlist h1:last-child { border-bottom: none; }
+
+        .btn-order {
+            background: #C8853A;
+            color: #1A0F08;
+            border: none;
+            /* font-weight via .fw-900 */
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 14px 48px;
+            border-radius: 4px;
+            margin-top: 16px;
+            transition: background 0.3s;
+        }
+        .btn-order:hover { background: #D4A853; }
+
+        /* ── CUSTOM CURSOR ── */
+        #cursor-dot {
+            position: fixed;
+            width: 8px; height: 8px;
+            background: #C8853A;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, background 0.3s;
+            mix-blend-mode: screen;
+        }
+        #cursor-ring {
+            position: fixed;
+            width: 36px; height: 36px;
+            border: 1px solid rgba(200,133,58,0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s cubic-bezier(.23,1,.32,1), height 0.4s cubic-bezier(.23,1,.32,1), opacity 0.3s;
+            mix-blend-mode: screen;
+        }
+        body.cursor-hover #cursor-dot  { width: 16px; height: 16px; background: #D4A853; }
+        body.cursor-hover #cursor-ring { width: 56px; height: 56px; border-color: rgba(212,168,83,0.5); }
+
+        /* ── MOTION BLUR TRAIL ── */
+        #trail-canvas {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9997;
+            opacity: 0.25;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CURSOR -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+    <canvas id="trail-canvas"></canvas>
+
+    <div class="container">
+        <div class="page-title fw-900">GR<span>Ã</span>O — 訂位系統</div>
+
+        <div class="row mt-2">
+            <span class="field-label fw-900">訂位姓名</span>
+            <div class="col-12">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" placeholder="" id="name01">
+                    <label for="">訂位人名稱（1~5字）</label>
+                    <div class="valid-feedback">輸入符合規定</div>
+                    <div class="invalid-feedback">輸入不符合規定</div>
+                </div>
+            </div>
+        </div>
+
+        <span class="field-label fw-900">電話號碼</span>
+        <div class="row">
+            <div class="col-12">
+                <input type="text" class="form-control" placeholder="請輸入 8~10 位數字" id="name02">
+                <div class="valid-feedback">輸入符合規定</div>
+                <div class="invalid-feedback">輸入不符合規定</div>
+            </div>
+        </div>
+
+        <span class="field-label fw-900">用餐人數</span>
+        <div class="row my-1">
+            <div class="col-12">
+                <select name="" id="people" class="form-select form-select-lg">
+                    <option value="" class="text-center" disabled selected>-- 請選擇人數 --</option>
+                    <option value="1~2人">1~2人</option>
+                    <option value="3~4人">3~4人</option>
+                    <option value="4~8人">4~8人</option>
+                    <option value="8人以上">8人以上（請先預繳訂金）</option>
+                </select>
+            </div>
+        </div>
+
+        <span class="field-label fw-900">訂位日期</span>
+        <div class="row my-1">
+            <div class="col-12">
+                <input type="date" class="form-control" id="resv_date">
+                <div class="valid-feedback">輸入符合規定</div>
+                <div class="invalid-feedback">請選擇日期</div>
+            </div>
+        </div>
+
+        <span class="field-label fw-900">訂位時間</span>
+        <div class="row my-1">
+            <div class="col-12">
+                <select id="resv_time" class="form-select form-select-lg">
+                    <option value="" disabled selected>-- 請選擇時段 --</option>
+                    <option value="08:00">08:00</option>
+                    <option value="08:30">08:30</option>
+                    <option value="09:00">09:00</option>
+                    <option value="09:30">09:30</option>
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="13:00">13:00</option>
+                    <option value="13:30">13:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="16:00">16:00</option>
+                    <option value="16:30">16:30</option>
+                    <option value="17:00">17:00</option>
+                    <option value="17:30">17:30</option>
+                    <option value="18:00">18:00</option>
+                    <option value="18:30">18:30</option>
+                </select>
+                <div class="valid-feedback">輸入符合規定</div>
+                <div class="invalid-feedback">請選擇時間</div>
+            </div>
+        </div>
+
+
+        <hr class="section-divider">
+        <span class="field-label fw-900">用餐目的</span>
+        <div class="row">
+            <div class="col-12 my-2">
+                <div class="form-check">
+                    <input type="checkbox" name="add" class="form-check-input name03" value="家庭聚會">
+                    <label class="form-check-label fw-900">家庭聚會</label>
+                </div>
+            </div>
+            <div class="col-12 my-2">
+                <div class="form-check">
+                    <input type="checkbox" name="add" class="form-check-input name03" value="朋友聚餐">
+                    <label class="form-check-label fw-900">朋友聚餐</label>
+                </div>
+            </div>
+            <div class="col-12 my-2">
+                <div class="form-check">
+                    <input type="checkbox" name="add" class="form-check-input name03" value="商業聚餐">
+                    <label class="form-check-label fw-900">商業聚餐</label>
+                </div>
+            </div>
+            <div class="col-12 my-2">
+                <div class="form-check">
+                    <input type="checkbox" name="add" class="form-check-input name03" value="慶生活動">
+                    <label class="form-check-label fw-900">慶生活動</label>
+                </div>
+            </div>
+            <div class="col-12 my-2">
+                <div class="form-check">
+                    <input type="checkbox" name="add" class="form-check-input name03" value="其他">
+                    <label class="form-check-label fw-900">其他(請在備註中說明)</label>
+                </div>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+        <span class="field-label fw-900">備註（1~50字）</span>
+        <div class="row mb-3">
+            <div class="col-12">
+                <textarea id="remark" class="form-control" rows="3" placeholder="請輸入備註..."></textarea>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button class="btn btn-confirm fw-900 me-2" id="check">確認訂位</button>
+            <button class="btn btn-cancel fw-500">取消</button>
+        </div>
+
+        <div class="showcast d-none">
+            <div class="col-md-12 mt-5">
+                <div class="detail-title fw-900">訂位明細</div>
+            </div>
+            <div class="border border-3 rounded-4 shadow-sm p-3 mb-2" id="showlist">
+                <h1 class="fw-900">訂位資訊載入中...</h1>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-order fw-900 reservation_btn">確認訂單</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/bootstrap.bundle.js"></script>
+    <script src="JS/jquery-4.0.0.js"></script>
+    <script>
+        let flag_name01 = false;
+        let flag_name02 = false;
+        let flag_ice = false;
+        let flag_date = false;
+        let flag_time = false;
+        let flag_chk_content = [];
+        let uniPrice = 0;
+        let totalPrice = 0;
+        let chk_content = [];
+
+        $(function () {
+            $('#name01').blur(function () {
+                if ($(this).val().length > 0 && $(this).val().length < 6) {
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    flag_name01 = true;
+                } else {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_name01 = false;
+                }
+            });
+
+            $('#name02').blur(function () {
+                if ($(this).val().length > 8 && $(this).val().length < 11) {
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    flag_name02 = true;
+                } else {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_name02 = false;
+                }
+            });
+
+
+            $('#resv_date').on('change', function () {
+                if ($(this).val()) {
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    flag_date = true;
+                } else {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_date = false;
+                }
+            });
+
+            $('#resv_time').on('change', function () {
+                if ($(this).val()) {
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    flag_time = true;
+                } else {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_time = false;
+                }
+            });
+
+            $('#people').change(function () {
+                $(this).removeClass("is-invalid").addClass("is-valid");
+                flag_ice = true;
+            });
+
+            $("#check").click(function () {
+                if (flag_name01 && flag_name02 && flag_ice && flag_date && flag_time) {
+                    chk_content = [];
+                    $("input[name='add']:checked").each(function () {
+                        chk_content.push($(this).val());
+                    });
+                    $('.showcast').removeClass('d-none');
+                    let strHTML = `<h1 class="fw-900">訂位人: ${$('#name01').val()}</h1>
+                                   <h1 class="fw-900">電話: ${$('#name02').val()}</h1>
+                                   <h1 class="fw-900">用餐人數: ${$('#people').val()}</h1>
+                                   <h1 class="fw-900">訂位日期: ${$('#resv_date').val()}</h1>
+                                   <h1 class="fw-900">訂位時間: ${$('#resv_time').val()}</h1>
+                                   <h1 class="fw-900">用餐目的: ${chk_content.join("、") || '未填寫'}</h1>
+                                   <h1 class="fw-900">備註: ${$('#remark').val() || '無'}</h1>`;
+                    $("#showlist").html(strHTML);
+                } else {
+                    alert("表單欄位有錯!");
+                }
+            });
+
+            $(".reservation_btn").click(function () {
+                let reservationData = {
+                    username: $('#name01').val(),
+                    phone: $('#name02').val(),
+                    member: $('#people').val(),
+                    date: $('#resv_date').val(),
+                    time: $('#resv_time').val(),
+                    purpose: chk_content,
+                    remark: $('#remark').val(),
+                    created_at: new Date().toLocaleString()
+                };
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:3000/reservation",
+                    contentType: "application/json",
+                    data: JSON.stringify(reservationData),
+                    success: function (data) { alert("訂位成功!"); },
+                    error: function () { alert("訂位失敗!"); }
+                });
+            });
+        });
+    </script>
+
+    <!-- ── CURSOR & TRAIL SCRIPTS ── -->
+    <script>
+        /* ═══════════════════════════════════════════
+           MOTION BLUR TRAIL CANVAS
+        ═══════════════════════════════════════════ */
+        (function () {
+            const canvas = document.getElementById('trail-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            let mx = -200, my = -200;
+            const trail = [];
+            const MAX = 28;
+
+            document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+
+            function lerp(a, b, t) { return a + (b - a) * t; }
+
+            let cx = mx, cy = my;
+            function animateTrail() {
+                requestAnimationFrame(animateTrail);
+                cx = lerp(cx, mx, 0.18);
+                cy = lerp(cy, my, 0.18);
+                trail.push({ x: cx, y: cy });
+                if (trail.length > MAX) trail.shift();
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 1; i < trail.length; i++) {
+                    const p0 = trail[i - 1], p1 = trail[i];
+                    const alpha = (i / trail.length) * 0.35;
+                    const radius = (i / trail.length) * 7;
+                    ctx.beginPath();
+                    ctx.moveTo(p0.x, p0.y);
+                    ctx.lineTo(p1.x, p1.y);
+                    ctx.strokeStyle = `rgba(200,133,58,${alpha})`;
+                    ctx.lineWidth = radius;
+                    ctx.lineCap = 'round';
+                    ctx.stroke();
+                }
+            }
+            animateTrail();
+
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        })();
+
+        /* ═══════════════════════════════════════════
+           CUSTOM CURSOR
+        ═══════════════════════════════════════════ */
+        (function () {
+            const dot = document.getElementById('cursor-dot');
+            const ring = document.getElementById('cursor-ring');
+            let rx = 0, ry = 0, mx = 0, my = 0;
+
+            document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+
+            function animCursor() {
+                requestAnimationFrame(animCursor);
+                dot.style.left = mx + 'px';
+                dot.style.top = my + 'px';
+                rx += (mx - rx) * 0.12;
+                ry += (my - ry) * 0.12;
+                ring.style.left = rx + 'px';
+                ring.style.top = ry + 'px';
+            }
+            animCursor();
+
+            document.querySelectorAll('a, button, input, select, textarea, label, .form-check').forEach(el => {
+                el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+                el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+            });
+        })();
+    </script>
+
+</body>
+</html>

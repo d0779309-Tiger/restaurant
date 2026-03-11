@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRÃO — 資料匯出</title>
+<link rel="stylesheet" href="CSS (1)/bootstrap.css">
+<link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+<script src="JS/xlsx.full.min.js"></script>
+<style>
+    *, a, button { cursor: none !important; }
+
+    body {
+        background: #1A0F08;
+        color: #F5EFE0;
+        font-family: 'Zen Maru Gothic', sans-serif;
+        min-height: 100vh;
+    }
+
+    .container { max-width: 960px; padding-top: 48px; padding-bottom: 80px; }
+
+    .page-title {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        letter-spacing: 0.3em;
+        color: #F5EFE0;
+        text-align: center;
+        background: #2C1810;
+        border: 1px solid rgba(200,133,58,0.3);
+        border-radius: 8px;
+        padding: 20px 12px 18px;
+        margin-bottom: 36px;
+    }
+    .page-title span { color: #C8853A; font-style: italic; }
+
+    .section-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: #C8853A;
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    /* 匯出卡片 */
+    .export-card {
+        background: rgba(245,239,224,0.03);
+        border: 1px solid rgba(200,133,58,0.2);
+        border-radius: 8px;
+        padding: 28px 32px;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+        transition: background 0.3s, border-color 0.3s;
+    }
+    .export-card:hover {
+        background: rgba(245,239,224,0.05);
+        border-color: rgba(200,133,58,0.4);
+    }
+    .export-card-info h3 {
+        font-size: 1.1rem;
+        color: #F5EFE0;
+        margin-bottom: 4px;
+    }
+    .export-card-info p {
+        font-size: 0.85rem;
+        color: rgba(245,239,224,0.4);
+        margin: 0;
+    }
+
+    .btn-export {
+        background: #C8853A;
+        color: #1A0F08;
+        border: none;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 10px 28px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        transition: background 0.3s, transform 0.2s;
+        white-space: nowrap;
+    }
+    .btn-export:hover { background: #D4A853; transform: translateY(-1px); }
+    .btn-export:disabled { background: rgba(200,133,58,0.3); color: rgba(26,15,8,0.5); transform: none; }
+
+    .btn-export-all {
+        background: transparent;
+        color: #C8853A;
+        border: 1px solid rgba(200,133,58,0.5);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 12px 36px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+    }
+    .btn-export-all:hover {
+        background: rgba(200,133,58,0.1);
+        border-color: #C8853A;
+        color: #D4A853;
+    }
+
+    /* 狀態提示 */
+    .status-bar {
+        background: rgba(44,24,16,0.8);
+        border: 1px solid rgba(200,133,58,0.2);
+        border-radius: 6px;
+        padding: 12px 20px;
+        font-size: 0.85rem;
+        color: rgba(245,239,224,0.5);
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .status-dot {
+        width: 8px; height: 8px;
+        border-radius: 50%;
+        background: #5EBB4B;
+        flex-shrink: 0;
+        animation: pulse 2s infinite;
+    }
+    .status-dot.error { background: #C8853A; animation: none; }
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
+    }
+
+    hr.divider {
+        border: none;
+        border-top: 1px solid rgba(200,133,58,0.15);
+        margin: 28px 0;
+    }
+
+    /* CURSOR */
+    #cursor-dot {
+        position: fixed; width: 8px; height: 8px;
+        background: #C8853A; border-radius: 50%;
+        pointer-events: none; z-index: 10000;
+        transform: translate(-50%, -50%);
+        transition: width 0.3s, height 0.3s, background 0.3s;
+        mix-blend-mode: screen;
+    }
+    #cursor-ring {
+        position: fixed; width: 36px; height: 36px;
+        border: 1px solid rgba(200,133,58,0.5); border-radius: 50%;
+        pointer-events: none; z-index: 10000;
+        transform: translate(-50%, -50%);
+        transition: width 0.4s cubic-bezier(.23,1,.32,1), height 0.4s cubic-bezier(.23,1,.32,1);
+        mix-blend-mode: screen;
+    }
+    body.cursor-hover #cursor-dot  { width: 16px; height: 16px; background: #D4A853; }
+    body.cursor-hover #cursor-ring { width: 56px; height: 56px; border-color: rgba(212,168,83,0.5); }
+    #trail-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 9997; opacity: 0.25; }
+</style>
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<canvas id="trail-canvas"></canvas>
+
+<div class="container">
+    <div class="page-title fw-900">GR<span>Ã</span>O — 資料匯出</div>
+
+    <div id="status-bar" class="status-bar">
+        <div class="status-dot" id="status-dot"></div>
+        <span id="status-text">正在連線至 JSON Server...</span>
+    </div>
+
+    <span class="section-label fw-900">選擇匯出項目</span>
+
+    <!-- 訂單 -->
+    <div class="export-card">
+        <div class="export-card-info">
+            <h3 class="fw-900">📋 訂單資料 <span id="orders-count" style="color:#C8853A;font-size:0.85rem;"></span></h3>
+            <p>orders — 包含訂購者、品項、冰塊、配料、數量、單價、總價</p>
+        </div>
+        <button class="btn-export fw-900" id="btn-orders" onclick="exportSheet('orders')">匯出 Excel</button>
+    </div>
+
+    <!-- 訂位 -->
+    <div class="export-card">
+        <div class="export-card-info">
+            <h3 class="fw-900">📅 訂位資料 <span id="reservation-count" style="color:#C8853A;font-size:0.85rem;"></span></h3>
+            <p>reservation — 包含訂位人、電話、人數、用餐目的、日期時間</p>
+        </div>
+        <button class="btn-export fw-900" id="btn-reservation" onclick="exportSheet('reservation')">匯出 Excel</button>
+    </div>
+
+    <hr class="divider">
+
+    <div class="text-center">
+        <button class="btn-export-all fw-900" onclick="exportAll()">📦 一次匯出全部（多工作表）</button>
+    </div>
+</div>
+
+<script>
+const BASE = 'http://localhost:3000';
+
+// 欄位中文對照
+const HEADERS = {
+    orders: {
+        id: 'ID', username: '訂購者', pname: '品項', ice: '冰塊',
+        toppings: '配料', quantity: '數量', unit_price: '單價',
+        topping_fee: '配料費', total_price: '總價', remark: '備註',
+        status: '狀態', date: '日期', time: '時間', created_at: '建立時間', updated_at: '更新時間'
+    },
+    reservation: {
+        id: 'ID', username: '訂位人', phone: '電話', member: '人數', guests: '用餐人數',
+        purpose: '用餐目的', date: '訂位日期', time: '訂位時間',
+        remark: '備註', created_at: '建立時間'
+    }
+};
+
+// 資料格式化
+function formatRow(item, type) {
+    const map = HEADERS[type] || {};
+    const row = {};
+    for (const [key, label] of Object.entries(map)) {
+        if (key in item) {
+            let val = item[key];
+            if (Array.isArray(val)) val = val.join('、');
+            row[label] = val ?? '';
+        }
+    }
+    return row;
+}
+
+// 從 JSON Server 拉資料
+async function fetchData(endpoint) {
+    const res = await fetch(`${BASE}/${endpoint}`);
+    if (!res.ok) throw new Error(`無法取得 ${endpoint}`);
+    return res.json();
+}
+
+// 匯出單一工作表
+async function exportSheet(type) {
+    const btn = document.getElementById(`btn-${type}`);
+    btn.disabled = true;
+    btn.textContent = '匯出中...';
+    try {
+        const data = await fetchData(type);
+        const rows = data.map(item => formatRow(item, type));
+        const ws = XLSX.utils.json_to_sheet(rows);
+
+        // 欄寬自動調整
+        const cols = Object.keys(rows[0] || {});
+        ws['!cols'] = cols.map(k => ({ wch: Math.max(k.length * 2, 12) }));
+
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, type === 'orders' ? '訂單' : '訂位');
+
+        const filename = `GRÃO_${type}_${new Date().toLocaleDateString('zh-TW').replace(/\//g,'-')}.xlsx`;
+        XLSX.writeFile(wb, filename);
+
+        btn.textContent = '✓ 完成';
+        setTimeout(() => { btn.textContent = '匯出 Excel'; btn.disabled = false; }, 2000);
+    } catch (e) {
+        btn.textContent = '✗ 失敗';
+        btn.disabled = false;
+        alert('匯出失敗，請確認 JSON Server 正在執行中');
+    }
+}
+
+// 匯出全部（多工作表）
+async function exportAll() {
+    try {
+        const [orders, reservation] = await Promise.all([
+            fetchData('orders'),
+            fetchData('reservation')
+        ]);
+
+        const wb = XLSX.utils.book_new();
+
+        const wsOrders = XLSX.utils.json_to_sheet(orders.map(i => formatRow(i, 'orders')));
+        wsOrders['!cols'] = Object.keys(HEADERS.orders).map(() => ({ wch: 16 }));
+        XLSX.utils.book_append_sheet(wb, wsOrders, '訂單');
+
+        const wsResv = XLSX.utils.json_to_sheet(reservation.map(i => formatRow(i, 'reservation')));
+        wsResv['!cols'] = Object.keys(HEADERS.reservation).map(() => ({ wch: 16 }));
+        XLSX.utils.book_append_sheet(wb, wsResv, '訂位');
+
+        const filename = `GRÃO_全部資料_${new Date().toLocaleDateString('zh-TW').replace(/\//g,'-')}.xlsx`;
+        XLSX.writeFile(wb, filename);
+    } catch (e) {
+        alert('匯出失敗，請確認 JSON Server 正在執行中');
+    }
+}
+
+// 連線狀態檢查
+async function checkStatus() {
+    const dot = document.getElementById('status-dot');
+    const text = document.getElementById('status-text');
+    try {
+        const [o, r] = await Promise.all([fetchData('orders'), fetchData('reservation')]);
+        dot.className = 'status-dot';
+        text.textContent = `JSON Server 連線正常 ─ 訂單 ${o.length} 筆 / 訂位 ${r.length} 筆`;
+        document.getElementById('orders-count').textContent = `(${o.length} 筆)`;
+        document.getElementById('reservation-count').textContent = `(${r.length} 筆)`;
+    } catch {
+        dot.className = 'status-dot error';
+        text.textContent = 'JSON Server 未啟動，請先執行 json-server db.json';
+        document.querySelectorAll('.btn-export').forEach(b => b.disabled = true);
+    }
+}
+
+checkStatus();
+
+// Cursor
+(function () {
+    const canvas = document.getElementById('trail-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    let mx = -200, my = -200, cx = 0, cy = 0;
+    const trail = [], MAX = 28;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function animateTrail() {
+        requestAnimationFrame(animateTrail);
+        cx = lerp(cx, mx, 0.18); cy = lerp(cy, my, 0.18);
+        trail.push({ x: cx, y: cy });
+        if (trail.length > MAX) trail.shift();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 1; i < trail.length; i++) {
+            const p0 = trail[i-1], p1 = trail[i];
+            ctx.beginPath(); ctx.moveTo(p0.x, p0.y); ctx.lineTo(p1.x, p1.y);
+            ctx.strokeStyle = `rgba(200,133,58,${(i/trail.length)*0.35})`;
+            ctx.lineWidth = (i/trail.length)*7; ctx.lineCap = 'round'; ctx.stroke();
+        }
+    }
+    animateTrail();
+    window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+    const dot = document.getElementById('cursor-dot'), ring = document.getElementById('cursor-ring');
+    let rx = 0, ry = 0;
+    function animCursor() {
+        requestAnimationFrame(animCursor);
+        dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+        rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+        ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    }
+    animCursor();
+    document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+
+<body>
+
+<!-- CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<canvas id="trail-canvas"></canvas>
+<canvas id="bg-canvas"></canvas>
+
+<!-- NAVIGATION -->
+<nav id="main-nav">
+  <a href="figma1.html" class="nav-logo">GR<span>Ã</span>O</a>
+  <ul class="nav-links">
+    <li><a href="menu.html">菜單</a></li>
+    <li><a href="story.html">關於我們</a></li>
+    <li><a href="testimonials.html">評價</a></li>
+    <li><a href="cta.html">預約</a></li>
+  </ul>
+  <a href="cta.html" class="nav-cta">立即預訂</a>
+  <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="padding-top: 120px;">
+  <div class="reveal">
+    <div class="section-label">顧客評價</div>
+    <h2 style="font-family:'Zen Maru Gothic',sans-serif; font-size:clamp(2rem,4.5vw,4rem); color:var(--cream);">他們這樣<em style="font-style:italic;color:var(--gold)">說</em></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="quote-mark">"</div>
+      <div class="star-row">
+        <iconify-icon icon="solar:star-bold"></iconify-icon>
+        <iconify-icon icon="solar:star-bold"></iconify-icon>
+        <iconify-icon icon="solar:star-bold"></iconify-icon>
+        <iconify-icon icon="solar:star-bold"></iconify-icon>
+        <iconify-icon icon="solar:star-bold"></iconify-icon>
+      </div>
+      <p class="testimonial-text">那杯耶加雪菲讓我第一次理解「咖啡有花香」不是行銷話術。班尼迪克蛋更是台北最好的版本，沒有之一。</p>
+      <div class="testimonial-author">
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80&fit=crop&crop=face" alt="Chen Yu Ting" class="author-avatar">
+        <div>
+          <span class="author-name">陳郁庭</span>
+          <span class="author-handle">@yuting.explore</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal" style="transition-delay:0.1s">
+      <div class="quote-mark">"</div>
+      <div class="star-row">
+        <iconify-icon icon="solar:star-bold"></iconify-icon>
+        <iconify-icon icon="solar:star-bold"></iconify-icon>
+        <iconify-icon icon="solar:star-bold"></iconify-icon>
+        <iconify-icon icon="solar:star-bold"></iconify-icon>
+        <iconify-icon icon="solar:star-bold"></iconify-icon>
+      </div>
+      <p class="testimonial-text">作為一個咖啡職人，GRÃO 的萃取水準讓我真心佩服。每次來訪都像接受一場精神洗禮，空間氛圍也無可挑剔。</p>
+      <div class="testimonial-author">
+        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80&fit=crop&crop=face" alt="David Lin" class="author-avatar">
+        <div>
+          <span class="author-name">林大偉</span>
+          <span class="author-handle">@davidlin.coffee</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal" style="transition-delay:0.2s">
+      <div class="quote-mark">"</div>
+      <div class="star-row">
+        <iconify-icon icon="solar:star-bold"></iconify-icon>
+        <iconify-icon icon="solar:star-bold"></iconify-icon>
+        <iconify-icon icon="solar:star-bold"></iconify-icon>
+        <iconify-icon icon="solar:star-bold"></iconify-icon>
+        <iconify-icon icon="solar:star-bold"></iconify-icon>
+      </div>
+      <p class="testimonial-text">舒芙蕾鬆餅的蓬鬆度完美，配上他們的手沖根本是療癒組合。週末早午餐已成為我和家人固定的幸福儀式。</p>
+      <div class="testimonial-author">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&q=80&fit=crop&crop=face" alt="Sophie Wu" class="author-avatar">
+        <div>
+          <span class="author-name">吳索菲</span>
+          <span class="author-handle">@sophieeats.tw</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">GR<span>Ã</span>O — Coffee &amp; Brunch Atelier</div>
+  <div class="footer-copy">© 2025 GRÃO · Crafted with Precision</div>
+  <div class="footer-socials">
+    <a href="#"><iconify-icon icon="solar:instagram-bold"></iconify-icon></a>
+    <a href="#"><iconify-icon icon="solar:facebook-bold"></iconify-icon></a>
+    <a href="#"><iconify-icon icon="solar:twitter-bold"></iconify-icon></a>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="JS/cafe.js"></script>
+</body>
+</html>

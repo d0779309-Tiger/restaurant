@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRÃO — Coffee & Brunch Atelier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="stylesheet" href="CSS (1)/cafe.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- MOTION BLUR TRAIL -->
+<canvas id="trail-canvas"></canvas>
+
+<!-- BACKGROUND CANVAS (Three.js particles) -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- LOADER -->
+<div id="loader">
+  <div id="loader-text">GRÃO</div>
+  <div id="loader-line"></div>
+</div>
+
+<!-- NAVIGATION -->
+<nav id="main-nav">
+  <a href="figma1.html" class="nav-logo">GR<span>Ã</span>O</a>
+  <ul class="nav-links">
+    <li><a href="menu.html">菜單</a></li>
+    <li><a href="story.html">關於我們</a></li>
+    <li><a href="testimonials.html">評價</a></li>
+    <li><a href="cta.html">預約</a></li>
+  </ul>
+  <a href="cta.html" class="nav-cta">立即預訂</a>
+  <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="v-guide" style="left:25%"></div>
+  <div class="v-guide" style="left:50%"></div>
+  <div class="v-guide" style="left:75%"></div>
+
+  <div class="hero-col stagger-col" data-speed="-0.08">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=85&fit=crop&crop=center" alt="Coffee Art">
+    <div class="hero-col-overlay"></div>
+    <span class="col-number">01</span>
+    <span class="col-tag">手沖咖啡</span>
+  </div>
+  <div class="hero-col stagger-col" data-speed="0.05">
+    <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=600&q=85&fit=crop&crop=center" alt="Brunch spread">
+    <div class="hero-col-overlay"></div>
+    <span class="col-number">02</span>
+    <span class="col-tag">輕食早午餐</span>
+  </div>
+  <div class="hero-col stagger-col" data-speed="-0.04">
+    <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=600&q=85&fit=crop&crop=center" alt="Latte art close-up">
+    <div class="hero-col-overlay"></div>
+    <span class="col-number">03</span>
+    <span class="col-tag">拿鐵藝術</span>
+  </div>
+  <div class="hero-col stagger-col" data-speed="0.09">
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=85&fit=crop&crop=center" alt="Cafe interior">
+    <div class="hero-col-overlay"></div>
+    <span class="col-number">04</span>
+    <span class="col-tag">溫暖空間</span>
+  </div>
+
+  <div class="hero-center-content">
+    <div class="hero-eyebrow" id="hero-eyebrow">台北 · 精品咖啡工作室</div>
+    <h1 class="hero-title">
+      <span class="hero-title-line" id="hl1">每一杯</span>
+      <span class="hero-title-line italic" id="hl2">皆是藝術</span>
+    </h1>
+    <p class="hero-subtitle" id="hero-sub">由莊園單品豆出發，以職人精神萃取，<br>搭配四季輕食，讓早晨成為儀式。</p>
+    <div class="hero-cta-group" id="hero-cta">
+      <a href="menu.html" class="btn-primary">探索菜單</a>
+      <a href="story.html" class="btn-ghost">我們的故事</a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator" id="scroll-ind">
+    <span>向下捲動</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track" id="marquee">
+    <div class="marquee-item"><div class="marquee-dot"></div>Single Origin Beans</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>手工製作每日鮮烤</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Farm-to-Table Brunch</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>精品莊園咖啡</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Specialty Coffee Atelier</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>職人烘焙工坊</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Seasonal Plates</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>每日精選特調</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Single Origin Beans</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>手工製作每日鮮烤</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Farm-to-Table Brunch</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>精品莊園咖啡</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Specialty Coffee Atelier</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>職人烘焙工坊</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Seasonal Plates</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>每日精選特調</div>
+  </div>
+</div>
+
+<!-- VALUES -->
+<section id="values">
+  <div class="values-left reveal">
+    <div class="section-label">我們的核心價值</div>
+    <h2>不妥協的<em>品質信仰</em></h2>
+    <p>GRÃO 源自葡萄牙語「咖啡豆」。我們相信每顆豆子都藏有一段故事——從赤道莊園到您的杯中，每個環節都以職人精神對待。</p>
+  </div>
+  <div class="values-right">
+    <div class="value-card reveal">
+      <div class="value-number">— 01</div>
+      <div class="value-title">溯源透明</div>
+      <div class="value-desc">直接與衣索比亞、哥倫比亞、瓜地馬拉莊園合作，每批豆子均附產區履歷，讓每一口都有據可查。</div>
+    </div>
+    <div class="value-card reveal" style="transition-delay:0.12s">
+      <div class="value-number">— 02</div>
+      <div class="value-title">感官體驗</div>
+      <div class="value-desc">咖啡師每日精確校準研磨刻度與萃取參數，結合四季食材輕食，打造多層次的早晨感官旅程。</div>
+    </div>
+    <div class="value-card reveal" style="transition-delay:0.24s">
+      <div class="value-number">— 03</div>
+      <div class="value-title">空間作為媒介</div>
+      <div class="value-desc">以溫潤木質、柔光石材與植栽構成的空間，讓每次到訪都是一段真正的休憩，而非匆忙的過渡。</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <p>精品合作夥伴</p>
+  <div class="partners-logos">
+    <div class="partner-logo">
+      <iconify-icon icon="simple-icons:nespresso"></iconify-icon>
+      <span>Nespresso</span>
+    </div>
+    <div class="partner-logo">
+      <iconify-icon icon="simple-icons:airbnb"></iconify-icon>
+      <span>Airbnb</span>
+    </div>
+    <div class="partner-logo">
+      <iconify-icon icon="simple-icons:uber"></iconify-icon>
+      <span>Uber Eats</span>
+    </div>
+    <div class="partner-logo">
+      <iconify-icon icon="simple-icons:tripadvisor"></iconify-icon>
+      <span>Tripadvisor</span>
+    </div>
+    <div class="partner-logo">
+      <iconify-icon icon="simple-icons:instagram"></iconify-icon>
+      <span>Instagram</span>
+    </div>
+  </div>
+</section>
+
+<!-- INFO BAR -->
+<div id="info-bar">
+  <div class="info-item">
+    <div class="info-item-label"><iconify-icon icon="solar:map-point-bold" style="vertical-align:middle;margin-right:6px;color:var(--caramel)"></iconify-icon>地址</div>
+    <div class="info-item-value">台北市大安區仁愛路四段 101 號<br>近捷運信義安和站 3 號出口</div>
+  </div>
+  <div class="info-item">
+    <div class="info-item-label"><iconify-icon icon="solar:clock-circle-bold" style="vertical-align:middle;margin-right:6px;color:var(--caramel)"></iconify-icon>營業時間</div>
+    <div class="info-item-value">週一至週五 08:00 – 17:00<br>週六至週日 08:00 – 18:30</div>
+  </div>
+  <div class="info-item">
+    <div class="info-item-label"><iconify-icon icon="solar:phone-bold" style="vertical-align:middle;margin-right:6px;color:var(--caramel)"></iconify-icon>聯絡我們</div>
+    <div class="info-item-value">+886 2 2700 0101<br>hello@grao.coffee</div>
+  </div>
+  <div class="info-item">
+    <div class="info-item-label"><iconify-icon icon="solar:instagram-bold" style="vertical-align:middle;margin-right:6px;color:var(--caramel)"></iconify-icon>社群</div>
+    <div class="info-item-value">@grao.coffee.taipei<br>每日更新品項與故事</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">GR<span>Ã</span>O — Coffee &amp; Brunch Atelier</div>
+  <div class="footer-copy">© 2025 GRÃO · Crafted with Precision</div>
+  <div class="footer-socials">
+    <a href="#"><iconify-icon icon="solar:instagram-bold"></iconify-icon></a>
+    <a href="#"><iconify-icon icon="solar:facebook-bold"></iconify-icon></a>
+    <a href="#"><iconify-icon icon="solar:twitter-bold"></iconify-icon></a>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="JS/cafe.js"></script>
+</body>
+</html>
