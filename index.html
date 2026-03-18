@@ -194,6 +194,16 @@
   </div>
 </div>
 
+<!-- CONTACT FORM -->
+<section id="contact">
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="姓名" required />
+    <input type="email" name="email" placeholder="信箱" required />
+    <textarea name="message" placeholder="內容" required></textarea>
+    <button type="submit">送出</button>
+  </form>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">GR<span>Ã</span>O — Coffee &amp; Brunch Atelier</div>
@@ -205,7 +215,29 @@
   </div>
 </footer>
 
+<!-- SCRIPTS -->
 <script src="main.js"></script>
 <script src="JS/cafe.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  emailjs.init("rqBNOM5T_Nq45zSKT");
+
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_vz7gn8k",
+      "template_m7bykd5",
+      this
+    ).then(
+      function () {
+        alert("信件已送出！");
+      },
+      function (error) {
+        alert("送出失敗：" + error.text);
+      }
+    );
+  });
+</script>
 </body>
 </html>
